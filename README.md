@@ -28,7 +28,7 @@ echo "Starting Docker..."
 sudo systemctl enable --now docker
 
 # Install kubectl
-curl -Lo kubectl "https://dl.k8s.io/release/$(curl -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -Lo kubectl https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
 chmod +x kubectl && sudo mv kubectl /usr/local/bin/
 
 # Install Kind
