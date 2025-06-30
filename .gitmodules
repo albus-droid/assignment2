@@ -1,4 +1,4 @@
 [submodule "web-app"]
 	path = web-app
-	url = https://github.com/ladunuthala/clo835_summer2023_assignment1.git
+	url = https://github.com/albus-droid/portable-technologies-assignment.git
 	branch = main
