@@ -1,4 +1,5 @@
-# Deployment Guide for CLO835 Assignment 2
+# Deployment Guide for CLO835 Assignment 2 
+![Push to ECR](https://github.com/albus-droid/assignment2/actions/workflows/main.yml/badge.svg)
 
 This README provides step-by-step instructions to deploy your two-tier web application (MySQL + web) on a local Kind Kubernetes cluster running on an Amazon Linux EC2 instance. It also covers building and pushing Docker images to ECR, creating namespaces, ConfigMap, pull-secrets, applying manifests, and testing.
 
