@@ -11,8 +11,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-        submodules: recursive
-        fetch-depth: 0  # Fetch all history for all branches and tags to ensure submodules are up-to-date             
+          submodules: recursive
+          fetch-depth: 0  # Fetch all history for all branches and tags to ensure submodules are up-to-date             
         
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
