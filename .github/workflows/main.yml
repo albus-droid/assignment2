@@ -29,11 +29,11 @@ jobs:
       - name: Build, tag and push MySQL Docker image
         run: |
           docker build -t mysql -f web-app/Dockerfile_mysql ./web-app
-          docker tag mysql:latest ${{ steps.login-ecr.outputs.registry }}:mysql
+          docker tag mysql:latest ${{ steps.login-ecr.outputs.registry }}/assignment:mysql
           docker push ${{ steps.login-ecr.outputs.registry }}:mysql
 
       - name: Build, tag and push Webapp Docker image
         run: |
           docker build -t webapp -f web-app/Dockerfile ./web-app
-          docker tag webapp:latest ${{ steps.login-ecr.outputs.registry }}:webapp
+          docker tag webapp:latest ${{ steps.login-ecr.outputs.registry }}/assignment:webapp
           docker push ${{ steps.login-ecr.outputs.registry }}:webapp
