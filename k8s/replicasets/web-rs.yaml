@@ -21,3 +21,19 @@ spec:
         image: 164340264957.dkr.ecr.us-east-1.amazonaws.com/assignment:webapp
         ports:
         - containerPort: 8080
+        env:
+        - name: DBHOST
+          value: mysql-svc.mysql.svc.cluster.local
+        - name: DBPORT
+          value: "3306"
+        - name: DBUSER
+          value: root
+        - name: DATABASE
+          value: employees
+        - name: DBPWD
+          value: "pw"
+        - name: APP_COLOR
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: currentColor
