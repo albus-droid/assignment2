@@ -99,22 +99,20 @@ Authenticate to ECR and create a Kubernetes secret in both namespaces so Pods ca
 
 ```bash
 # For mysql namespace
-aws ecr get-login-password --region us-east-1 \
-  | kubectl create secret docker-registry ecr-pull-secret \
-      --docker-server=164340264957.dkr.ecr.us-east-1.amazonaws.com \
-      --docker-username=AWS \
-      --docker-password-stdin \
-      --docker-email=you@example.com \
-      -n mysql
+kubectl create secret docker-registry ecr-pull-secret \
+  --docker-server=164340264957.dkr.ecr.us-east-1.amazonaws.com \
+  --docker-username=AWS \
+  --docker-password="$(aws ecr get-login-password --region us-east-1)" \
+  --docker-email=you@example.com \
+  -n mysql
 
 # For web namespace
-aws ecr get-login-password --region us-east-1 \
-  | kubectl create secret docker-registry ecr-pull-secret \
-      --docker-server=164340264957.dkr.ecr.us-east-1.amazonaws.com \
-      --docker-username=AWS \
-      --docker-password-stdin \
-      --docker-email=you@example.com \
-      -n web
+kubectl create secret docker-registry ecr-pull-secret \
+  --docker-server=164340264957.dkr.ecr.us-east-1.amazonaws.com \
+  --docker-username=AWS \
+  --docker-password="$(aws ecr get-login-password --region us-east-1)" \
+  --docker-email=you@example.com \
+  -n web
 ```
 
 ---
